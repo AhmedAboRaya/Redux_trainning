@@ -2,6 +2,7 @@
 import './App.css'
 import Counter from './components/Counter'
 import DarkMode from './components/DarkMode'
+import ChangeLanguage from './components/languages/ChangeLanguage'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
     
       <Counter />
       <DarkMode />
+      <ChangeLanguage />
     </>
   )
 }
