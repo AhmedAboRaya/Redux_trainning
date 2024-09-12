@@ -26,7 +26,10 @@ export default tseslint.config({
 ```
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> afb26c87ca1e8d7006574f2f025dd1aea5c535a7
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
 - Optionally add `...tseslint.configs.stylisticTypeChecked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
