@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 
 const Counter = () => {
-  const {value,text} = useSelector((state: RootState) => state.counter );
+  const {value} = useSelector((state: RootState) => state.counter );
   const {value: modeValue} = useSelector((state: RootState) => state.mode );
   const { lang } = useSelector((state: RootState) => state.languages);
   const dispatch = useDispatch();

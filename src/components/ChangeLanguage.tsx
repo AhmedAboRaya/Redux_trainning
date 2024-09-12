@@ -1,17 +1,18 @@
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../app/store";
-import Button from "../ui/Button";
+import { RootState } from "../app/store";
+import Button from "./ui/Button";
 import React, { useState } from "react";
-import { changeLang } from "../../app/feature/language/langSlice";
+import { changeLang } from "../app/feature/language/langSlice";
 
 const ChangeLanguage = () => {
   const { lang } = useSelector((state: RootState) => state.languages);
   const dispatch = useDispatch();
-  const [selectedLanguage, setSelectedLanguage] = useState(lang);
+  const [selectedLanguage, setSelectedLanguage] = useState<'ar' | 'en' | 'es' | 'fr'>(lang);
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLanguage = event.target.value;
+    const newLanguage: 'ar' | 'en' | 'es' | 'fr' = event.target.value as 'ar' | 'en' | 'es' | 'fr';
     setSelectedLanguage(newLanguage);
+    
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
