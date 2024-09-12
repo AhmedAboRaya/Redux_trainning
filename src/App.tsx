@@ -1,21 +1,12 @@
-import './App.css'
-// import Counter from './components/Counter'
-// import DarkMode from './components/DarkMode'
-// import ChangeLanguage from './components/ChangeLanguage'
-import Products from './components/Products'
-import Navbar  from './components/Navbar'
+// App.tsx
+import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import Router from './router/Router';
 
-function App() {
-
-  return (
-    <>
-      <Navbar />
-      {/* <Counter />
-      <DarkMode />
-      <ChangeLanguage /> */}
-      <Products />
-    </>
-  )
+const App = () => {
+  return( 
+    <RouterProvider router={Router} />
+  );
 }
 
-export default App
+export default App;
