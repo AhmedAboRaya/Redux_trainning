@@ -1,10 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../app/store";
+import { useDispatch } from "react-redux";
 import { ICard } from "../../interfaces/interfaces";
 import { addToCart } from "../../app/feature/cart/cartSlice";
+import { memo } from "react";
 
 const Card = ({ title, image, price, alt, id }: ICard) => {
-  const { value } = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -26,4 +25,4 @@ const Card = ({ title, image, price, alt, id }: ICard) => {
   );
 };
 
-export default Card;
+export default memo(Card);
