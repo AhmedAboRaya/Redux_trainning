@@ -8,11 +8,7 @@ const Card = ({ title, image, price, alt, id }: ICard) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    if (value.find((i) => i === id)) {
-      console.log("Already exists");
-    } else {
-      dispatch(addToCart(id));
-    }
+    dispatch(addToCart(id));
   };
 
   return (
@@ -24,7 +20,7 @@ const Card = ({ title, image, price, alt, id }: ICard) => {
         onClick={handleClick}
         className="hover:bg-gray-300 mx-2 bg-white rounded-lg py-1 font-semibold text-lg font-sans duration-300"
       >
-        Add to cart{value}
+        Add to cart
       </button>
     </div>
   );

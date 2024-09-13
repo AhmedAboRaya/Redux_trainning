@@ -4,7 +4,23 @@ import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const { value } = useSelector((state: RootState) => state.cart);
-  const cartCount = value.length;
+
+  function countProductsInCart(arr: number[]): { [key: number]: number } {
+    const countMap: { [key: number]: number } = {};
+  
+    arr.forEach((num) => {
+      if (countMap[num]) {
+        countMap[num] += 1; 
+      } else {
+        countMap[num] = 1; 
+      }
+    });
+  
+    return countMap;
+  }
+
+  const cartCount = Object.values(countProductsInCart(value)).length;
+  
   return (
     <nav className="flex flex-row justify-between items-center bg-white rounded-lg">
       <div className="flex items-center bg-white">
