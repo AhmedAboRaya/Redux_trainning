@@ -3,12 +3,14 @@ import { useDispatch } from 'react-redux'
 import counterSlice from './feature/counter/counterSlice'
 import darkSlice from './feature/dark/darkSlice'
 import languagesReducer from './feature/language/langSlice'
+import cartSlice from './feature/cart/cartSlice'
 
 const store = configureStore({
   reducer: {
     counter: counterSlice,
     mode: darkSlice,
     languages: languagesReducer,
+    cart: cartSlice,
   },
 })
 

@@ -1,11 +1,12 @@
-// App.tsx
-import './App.css';
 import { RouterProvider } from 'react-router-dom';
-import Router from './router/Router';
+import router from './router/Router';
 
 const App = () => {
   return( 
-    <RouterProvider router={Router} />
+    <div className=''>
+      <RouterProvider router={router} />
+    </div>
+    
   );
 }
 

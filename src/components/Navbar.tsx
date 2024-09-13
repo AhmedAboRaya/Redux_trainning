@@ -1,16 +1,20 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { RootState } from '../app/store';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+  const { value } = useSelector((state: RootState) => state.cart);
+  const cartCount = value.length;
   return (
-    <nav className="flex flex-row justify-between items-center">
-      <div className="flex items-center">
-        <NavLink className="text-white font-bold text-3xl hover:text-white" to="/">Store</NavLink>
+    <nav className="flex flex-row justify-between items-center bg-white rounded-lg">
+      <div className="flex items-center bg-white">
+        <Link className="text-gray-700 font-bold text-4xl hover:text-white bg-white" to="/">Store</Link>
       </div>
-      <div className="space-x-4 flex items-center">
-        <NavLink className="text-white hover:text-gray-500 text-xl duration-500" to="/">Home</NavLink>
-        <NavLink className="text-white hover:text-gray-500 text-xl duration-500" to="/cart">Cart</NavLink>
-        <NavLink className="text-white hover:text-gray-500 text-xl duration-500" to="/products">Products</NavLink>
-        <NavLink className="text-white hover:text-gray-500 text-xl duration-500" to="/login">Login</NavLink>
+      <div className="space-x-4 flex items-center bg-white">
+        <NavLink className="text-gray-700 hover:text-gray-500 py-3 font-semibold text-2xl duration-500 bg-white" to="/">Home</NavLink>
+        <NavLink className="text-gray-700 hover:text-gray-500 py-3 font-semibold text-2xl duration-500 bg-white" to="/cart">Cart({cartCount})</NavLink>
+        <NavLink className="text-gray-700 hover:text-gray-500 py-3 font-semibold text-2xl duration-500 bg-white" to="/products">Products</NavLink>
+        <NavLink className="text-gray-700 hover:text-gray-500 py-3 font-semibold text-2xl duration-500 bg-white" to="/login">Login</NavLink>
       </div>
     </nav>
   );

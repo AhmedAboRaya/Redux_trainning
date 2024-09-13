@@ -1,16 +1,20 @@
+
 import { products } from "../data/products";
 import Card from "./ui/Card";
 
+
 const Products = () => {
+
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 space-x-6 gap-5 mt-4">
-      {products.map((product, index) => (
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:max-w-[2000px] gap-10 mt-4 ">
+      {products.map((product) => (
         <Card
-          key={index}
+          key={product.id}
           alt={product.alt}
           price={product.price}
           image={product.image}
           title={product.title}
+          id={product.id}
         />
       ))}
     </div>
